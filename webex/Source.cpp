@@ -16,9 +16,17 @@ void hideTopOverlay()
 	ShowWindow(_HWND, SW_HIDE);
 }
 
+//Remove blue bar at the top during a presentation
+void unhideTopOverlay()
+{
+	HWND _HWND = FindWindow(L"WbxDockParent", NULL);
+	ShowWindow(_HWND, SW_SHOW);
+}
+
 int main()
 {
 	hideTopOverlay();
+	//unhideTopOverlay();
 	makeTeacherTiny();
 	return 0;
 }
